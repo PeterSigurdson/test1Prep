@@ -12,15 +12,15 @@ namespace test1Prep
 
     class Example1
     {
-        static int i = 0;
+        static int i, j = 0;
 
         public static void run()
         {
             
-            for (; MethodA() ; )
+            for (Console.WriteLine("yippeeee!!!") ; MethodA() ; Console.WriteLine("Yeah!!!") ) 
             {
                 Console.WriteLine(i--);
-                if ( i < -11) { break;}
+                if ( j < -11) { Console.WriteLine("method run: Point E");  break;}
             }
             // point A:
             Console.WriteLine("I am after Point A");
@@ -28,8 +28,13 @@ namespace test1Prep
         }
 
         public static bool MethodA()
-        {
-            i -= 1;
+        {   i -= 1;
+            if (i < -20)
+            {
+                Console.WriteLine("I am in MethodA return FALSE condition...");
+                return false;
+            }
+
             return true;
         }
     }
